@@ -3,6 +3,7 @@ package com.alix;
 /**
  * @author Alix Studios
  * 
+ * 
  */
 public class SpriteExtractor {
 	public static void main(String[] args) throws Exception {
