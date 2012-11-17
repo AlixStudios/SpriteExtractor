@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project name="Create Runnable Jar for Project SpriteExtractor with libraries in sub-folder" default="create_run_jar">
+
+	<!-- this file was created by Eclipse Runnable JAR Export Wizard -->
+	<!-- ANT 1.7 is required -->
+
+	<path id="build_path">
+		<fileset dir="${basedir}/lib">
+			<include name="*.jar" />
+		</fileset>
+
+	</path>
+
+	<target name="create_run_jar" depends="compile">
+		<manifestclasspath property="manifest_cp" jarfile="SpriteExtractor.jar">
+			<classpath refid="build_path" />
+		</manifestclasspath>
+		<jar destfile="${basedir}/SpriteExtractor.jar">
+			<manifest>
+				<attribute name="Main-Class" value="com.alix.SpriteExtractor" />
+
+				<attribute name="Class-Path" value=". ${manifest_cp}" />
+			</manifest>
+			<fileset dir="${basedir}/bin" />
+		</jar>
+	</target>
+	<!-- - - - - - - - - - - - - - - - - - 
+          target: compile                      
+         - - - - - - - - - - - - - - - - - -->
+	<target name="compile">
+		<delete dir="${basedir}/bin" failonerror="false" verbose="true" />
+		<mkdir dir="${basedir}/bin" />
+		<javac includeantruntime="false" srcdir="${basedir}/src" destdir="${basedir}/bin" classpathref="build_path" debug="on" />
+	</target>
+
+
+</project>
