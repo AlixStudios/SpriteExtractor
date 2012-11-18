@@ -6,8 +6,8 @@ SpriteExtractor is an Open source project that allows you to extract images from
 How to Build
 ------------
 
-$ cd SpriteExtractor
-$ ant
+$ `cd SpriteExtractor`
+$ `ant`
 
 it'll create SpriteExtractor.jar, other required jar files are already in lib/
 
@@ -15,5 +15,5 @@ it'll create SpriteExtractor.jar, other required jar files are already in lib/
 How to Run
 ----------
 
-java -jar SpriteExtractor.jar
+`java -jar SpriteExtractor.jar`
 
